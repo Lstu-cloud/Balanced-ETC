@@ -5,7 +5,7 @@ We introduce a novel approach for encrypted Internet traffic classification and 
 Approach
 
 1.Our approach uses the first 25 packets of each network flow.
-2.Transform the packet size and packet arrival time interval of the first 25 packets of each network flow into 5×10 pixel grayscale image.Transform the first 100 bytes of each packet's Ethernet header, IP header, and TCP/UDP header into 10×10 pixel grayscale image. The images are stitched together to produce a 10×15 pixel grayscale image.
+2.Transform the packet size and packet arrival time interval of the first 25 packets of each network flow into 5×10 pixel grayscale image.Transform the first 100 bytes of each packet's Ethernet header, IP header, and TCP/UDP header into 10×10 pixel grayscale image. The images are stitched together to produce 10×15 pixel grayscale image.
 3.Classification using balanced supervised contrast learning.
 
 Dataset

@@ -16,14 +16,14 @@ Run the files as follow:
 
 step1.Processing
 
-1.split.py:Network flow splitting.
-2.pc.py:Transform pcap to csv.
-3.cd.py:Convert base 16 to base 10.
-4.firstn.py:The first n packets of each flow are retained. 
-5.pincsv.py:csv file splicing.
-6.cp.py:Transform csv to picture.
-7.combine.py:picture splicing。
-8.generic_parser.py:Analyze packet size and packet arrival interval in each network flow. 
+1.split.py: Network flow splitting.
+2.pc.py: Transform pcap to csv.
+3.cd.py: Convert base 16 to base 10.
+4.firstn.py: The first n packets of each flow are retained. 
+5.pincsv.py: csv file splicing.
+6.cp.py: Transform csv to picture.
+7.combine.py: picture splicing。
+8.generic_parser.py: Analyze packet size and packet arrival interval in each network flow. 
 The generic_parser.py runtime environment is python2.7.18, and the other files are python3.8.16.
 
 step2.Classify

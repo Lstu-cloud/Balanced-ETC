@@ -8,7 +8,7 @@ import torch.nn as nn
 
 
 
-def channel_shuffle(x: Tensor, groups: int) -> Tensor:
+def channel_resnext(x: Tensor, groups: int) -> Tensor:
 
     batch_size, num_channels, height, width = x.size()
     channels_per_group = num_channels // groups
@@ -93,18 +93,18 @@ class InvertedResidual(nn.Module):
 
             out = torch.cat((self.branch1(x), self.branch2(x)), dim=1)
 
-        out = channel_shuffle(out, 2)
+        out = channel_resnext(out, 2)
 
         return out
 
 
-class ShuffleNetV2(nn.Module):
+class resnext50(nn.Module):
     def __init__(self,
                  stages_repeats: List[int],
                  stages_out_channels: List[int],
                  num_classes: int = 1000,
                  inverted_residual: Callable[..., nn.Module] = InvertedResidual):
-        super(ShuffleNetV2, self).__init__()
+        super(resnext50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50_x1_0()t50, self).__init__()
 
         if len(stages_repeats) != 3:
             raise ValueError("expected stages_repeats as list of 3 positive ints")
@@ -163,68 +163,32 @@ class ShuffleNetV2(nn.Module):
         return self._forward_impl(x)
 
 
-def shufflenet_v2_x0_5(num_classes=1000):
-    """
-    Constructs a ShuffleNetV2 with 0.5x output channels, as described in
-    `"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"
-    <https://arxiv.org/abs/1807.11164>`.
-    weight: https://download.pytorch.org/models/shufflenetv2_x0.5-f707e7126e.pth
-
-    :param num_classes:
-    :return:
-    """
-    model = ShuffleNetV2(stages_repeats=[4, 8, 4],
+def resnext50(num_classes=1000):
+    model = resnext50(stages_repeats=[4, 8, 4],
                          stages_out_channels=[24, 48, 96, 192, 1024],
                          num_classes=num_classes)
 
     return model
 
 
-def shufflenet_v2_x1_0(num_classes=1000):
-    """
-    Constructs a ShuffleNetV2 with 1.0x output channels, as described in
-    `"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"
-    <https://arxiv.org/abs/1807.11164>`.
-    weight: https://download.pytorch.org/models/shufflenetv2_x1-5666bf0f80.pth
-
-    :param num_classes:
-    :return:
-    """
-    model = ShuffleNetV2(stages_repeats=[4, 8, 4],
+def resnext50_x1_0(num_classes=1000):
+    model = resnext50(stages_repeats=[4, 8, 4],
                          stages_out_channels=[24, 116, 232, 464, 1024],
                          num_classes=num_classes)
 
     return model
 
 
-def shufflenet_v2_x1_5(num_classes=1000):
-    """
-    Constructs a ShuffleNetV2 with 1.0x output channels, as described in
-    `"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"
-    <https://arxiv.org/abs/1807.11164>`.
-    weight: https://download.pytorch.org/models/shufflenetv2_x1_5-3c479a10.pth
-
-    :param num_classes:
-    :return:
-    """
-    model = ShuffleNetV2(stages_repeats=[4, 8, 4],
+def resnext50_x1_5(num_classes=1000):
+    model = resnext50(stages_repeats=[4, 8, 4],
                          stages_out_channels=[24, 176, 352, 704, 1024],
                          num_classes=num_classes)
 
     return model
 
 
-def shufflenet_v2_x2_0(num_classes=1000):
-    """
-    Constructs a ShuffleNetV2 with 1.0x output channels, as described in
-    `"ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design"
-    <https://arxiv.org/abs/1807.11164>`.
-    weight: https://download.pytorch.org/models/shufflenetv2_x2_0-8be3c8ee.pth
-
-    :param num_classes:
-    :return:
-    """
-    model = ShuffleNetV2(stages_repeats=[4, 8, 4],
+def resnext50_x2_0(num_classes=1000):
+    model = resnext50(stages_repeats=[4, 8, 4],
                          stages_out_channels=[24, 244, 488, 976, 2048],
                          num_classes=num_classes)
 
